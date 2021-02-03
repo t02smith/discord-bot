@@ -1,0 +1,20 @@
+{
+    "Admin": {
+        "permissions": ["ADMINISTRATOR"],
+        "color": "RED",
+        "level": 5,
+        "position": 1
+    },
+    "Verified": {
+        "permissions": ["SEND_MESSAGES", "VIEW_CHANNEL"],
+        "color": "GREEN",
+        "level": 1,
+        "position": 3
+    },
+    "Muted": {
+        "permissions": ["VIEW_CHANNEL"],
+        "color": "WHITE",
+        "level": 0,
+        "position": 4
+    }
+}
