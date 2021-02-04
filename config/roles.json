@@ -5,8 +5,14 @@
         "level": 5,
         "position": 1
     },
+    "Manager": {
+        "permissions": ["SEND_MESSAGES", "VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
+        "color": "BLUE",
+        "level": 4,
+        "position": 2
+    },
     "Verified": {
-        "permissions": ["SEND_MESSAGES", "VIEW_CHANNEL"],
+        "permissions": ["SEND_MESSAGES", "VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
         "color": "GREEN",
         "level": 1,
         "position": 3
@@ -15,6 +21,12 @@
         "permissions": ["VIEW_CHANNEL"],
         "color": "WHITE",
         "level": 0,
+        "position": 4
+    },
+    "Warning": {
+        "permissions": [],
+        "color": "ORANGE",
+        "level": 1,
         "position": 4
     }
 }

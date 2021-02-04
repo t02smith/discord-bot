@@ -18,5 +18,5 @@ module.exports.help = {
     "name": "nuke",
     "description": "Deletes all messages in a channel",
     "use": "nuke",
-    "position": 1
+    "level": 1
 }

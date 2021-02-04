@@ -16,5 +16,6 @@ module.exports.run = async(client, message, args) => {
 module.exports.help = {
     "name": "help",
     "description": "Lists all available commands",
+    "use": "roll <upperBound>",
     "level": 1
 }

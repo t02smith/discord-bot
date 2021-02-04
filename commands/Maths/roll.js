@@ -15,5 +15,5 @@ module.exports.help = {
     "name": "roll",
     "description": "Pass through an upperbound greater than 1 and it will randomly select a value",
     "use": "roll <upperBound>",
-    "position": 3
+    "level": 1
 }
