@@ -5,42 +5,14 @@ const Discord = require("discord.js");
 const express = require("express");
 const fs = require("fs");
 
+const maxLevel = require("./functions/maxLevel.js");
+const loadCommands = require("./functions/loadCommands.js");
+
 //Config file
 const config = require("./config/config.json");
 
 //Discord client to control the bot
 const client = new Discord.Client();
-
-
-
-function loadCommands(path, client) {
-    fs.readdir(path, (err, files) => {
-        if (err) console.log(err);
-
-        //Searches for commands in all directories
-        let commands = []
-        files.forEach((dir) => {
-            if (dir != "dist") {
-                if (dir.split(".").pop() === "js") {
-                    commands.push(dir);
-                } else if (fs.existsSync(`${path}/${dir}`)) {
-                    loadCommands(`${path}/${dir}`, client);
-                }
-            }
-            
-        })
-        
-        //Loads all the found commands
-        commands.forEach((commandPath) => {
-            let command = require(`${path}/${commandPath}`);
-            client.commands.set(command.help.name, command);
-        });
-
-    });
-
-    
-    
-}
 
 //Called when the bot goes online
 client.on("ready", () => {
@@ -56,7 +28,7 @@ client.on("ready", () => {
 
     //Loads commands
     client.commands = new Discord.Collection();
-    loadCommands("./commands", client);
+    loadCommands.loadCommands("./commands", client);
 
     //Waits before seeing how many commands are loaded
     setTimeout(() => {
@@ -78,29 +50,11 @@ client.on("message", async (message) => {
     let command = content[0];
     let args = content.slice(1);
 
-    //Finds the max permission level of a user
-    const maxLevel = (message) => {
-        const roles = require("./config/roles.json");
-        let max = 0;
-        
-        if (message.member.id === message.guild.ownerID) { //If the user is the owner their role doesn't matter
-            max = 5;
-        } else {
-            for (const roleName in roles) { //Finds the highest ranking role
-                if (message.member.roles.cache.find(r => r.name === roleName)) {
-                    if (roles[roleName].level > max) max = roles[roleName].level;
-                }
-            }
-        }
-
-        return max;
-    }
-   
     //Checks if it is a command
     let commandFile = client.commands.get(command.slice(prefix.length));
 
     //Runs the command if it exists and the user is allowed to
-    if (commandFile && commandFile.help.level <= maxLevel(message)) {
+    if (commandFile && commandFile.help.level <= maxLevel.maxLevel(message)) {
         commandFile.run(client, message, args);
     } 
     
