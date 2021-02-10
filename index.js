@@ -4,6 +4,7 @@
 const Discord = require("discord.js");
 const express = require("express");
 const fs = require("fs");
+require("dotenv").config();
 
 const maxLevel = require("./functions/maxLevel.js");
 const loadCommands = require("./functions/loadCommands.js");
@@ -61,7 +62,7 @@ client.on("message", async (message) => {
 });
 
 
-client.login(config.token);
+client.login(process.env.DISCORD_TOKEN);
 
 let app = express();
 

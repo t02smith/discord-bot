@@ -25,7 +25,7 @@ module.exports.run = async(client, message, args) => {
 
 module.exports.help = {
     "name": "play",
-    "description": "Plays a youtube video",
+    "description": "Plays a youtube video's audio",
     "use": "play <youtubeLink>",
     "level": 1
 }

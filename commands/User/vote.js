@@ -47,6 +47,6 @@ module.exports.run = async(client, message, args) => {
 module.exports.help = {
     "name": "vote",
     "description": "Lets users vote between some given options.",
-    "use": 'vote <time> <Question> <Each answer enclose in "">',
+    "use": 'vote <time> <Question> <Options>',
     "level": 1
 }
