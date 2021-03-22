@@ -5,13 +5,15 @@ module.exports.run = async(client, message, args) => {
     const suggestion = args.join(" ");
     
     admins.forEach((admin) => {
-        admin.send(suggestion)
+        admin.send(
+            `Suggestion from: ${message.member}:\`\`\`${suggestion}\`\`\``
+        )
     })
 }
 
 module.exports.help = {
     "name": "suggest",
     "description": "Sends a suggestion to the admins",
-    "use": "!suggestion <suggestion>",
+    "use": "suggest <suggestion>",
     "level": 1
 }
