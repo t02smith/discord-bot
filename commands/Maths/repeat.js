@@ -2,9 +2,11 @@ const Discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
     const n = parseInt(args[0]);
-    const word = args[1] + " ";
+    args.shift();
 
-    return message.channel.send(word.repeat(n));
+    const phrase = args.join(" ");
+
+    return message.channel.send(phrase.repeat(n) + " ");
 }
 
 module.exports.help = {

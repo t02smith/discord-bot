@@ -20,8 +20,8 @@ client.on("ready", () => {
     client.user.setStatus("online");
     client.user.setPresence({
         activity: {
-            name: "you",
-            type: "WATCHING"
+            name: config.botPresence.name,
+            type: config.botPresence.type
         }
     });
 
@@ -61,11 +61,9 @@ client.on("message", async (message) => {
     
 });
 
-
 client.login(process.env.DISCORD_TOKEN);
 
 let app = express();
-
 app.set("view engine", "html");
 
 const port = config.port;

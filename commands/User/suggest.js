@@ -6,7 +6,7 @@ module.exports.run = async(client, message, args) => {
     
     admins.forEach((admin) => {
         admin.send(
-            `Suggestion from: ${message.member}:\`\`\`${suggestion}\`\`\``
+            `Suggestion from ${message.member} for **${message.guild.name}**:\n > ${suggestion}`
         )
     })
 }

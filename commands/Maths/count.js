@@ -1,29 +1,30 @@
 const Discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
-    const letter = args[0];
+    let matches = 0;
 
-    const reg = /"(.*?)"/g
-    let msg = message.content.match(reg);
-    msg.forEach((phrase, i) => {
-        msg[i] = phrase.substring(1, phrase.length-1);
-    })
+    const input = args.join(" ").split("|");
+    const searchFor = input[0].trim().split("");
+    const searchIn = input[1].trim().split("");
 
-    //For now im gonna assume that the user is only gonna input a letter to search for
-    const phrase = msg[0];
-    let count = 0;
+    let searchIndex = 0;
+    for (let i = 0; i < searchIn.length; i++) {
+        if (searchIn[i] == searchFor[searchIndex]) searchIndex++;
+        else searchIndex = 0;
 
-    for (let i = 0; i < phrase.length; i++) {
-        if (phrase.charAt(i) === letter) count++;
+        if (searchIndex == searchFor.length) {
+            matches++;
+            searchIndex = 0;
+        }
     }
 
-    message.channel.send(`"${letter}" was found ${count} times`);
+    message.channel.send(`'${input[0].trim()}' was found ${matches} times!`); 
 }
 
 module.exports.help = {
     "name": "count",
-    "description": "Counts the number of time a letter/string appears in a word/phrase",
-    "use": "count <letter/string> <word/phrase>",
+    "description": "Counts the number of time a string appears in a word/phrase",
+    "use": "count <letter/string> | <word/phrase>",
     "level": 1
 
 }
