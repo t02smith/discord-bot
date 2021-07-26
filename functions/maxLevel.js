@@ -1,5 +1,11 @@
 const Discord = require("discord.js");
 
+/**
+ * Returns the user's highest role level
+ * This determines what commands they can run
+ * @param {Discord.Message} message The message te user sent
+ * @returns User's max role level
+ */
 function maxLevel(message) {
     const roles = require("../config/roles.json");
     let max = 0;

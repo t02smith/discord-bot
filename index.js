@@ -1,4 +1,4 @@
-//Discord client - Don Cheadle
+//Discord client
 
 //Ensures we have the correct libraries available
 const Discord = require("discord.js");
@@ -6,11 +6,12 @@ const express = require("express");
 const fs = require("fs");
 require("dotenv").config();
 
-const maxLevel = require("./functions/maxLevel.js");
-const loadCommands = require("./functions/loadCommands.js");
 
 //Config file
 const config = require("./config/config.json");
+
+//Command management
+const commands = require("./functions/commands.js");
 
 //Discord client to control the bot
 const client = new Discord.Client();
@@ -29,7 +30,7 @@ client.on("ready", () => {
 
     //Loads commands
     client.commands = new Discord.Collection();
-    loadCommands.loadCommands("./commands", client);
+    commands.loadCommands("./commands", client);
 
     //Waits before seeing how many commands are loaded
     setTimeout(() => {
@@ -38,26 +39,15 @@ client.on("ready", () => {
 
 });
 
-//Organises messages received by the bot
-const prefix = config.prefix;
+
+//When a message is sent to a server the bot is in
 client.on("message", async (message) => {
     //if (message.author.client) return;          //If the bot sends the message
 
     //If someone private messages the bot
     if (message.channel.type === "dm") return;
 
-    //Content of the message
-    let content = message.content.split(" ");   
-    let command = content[0];
-    let args = content.slice(1);
-
-    //Checks if it is a command
-    let commandFile = client.commands.get(command.slice(prefix.length));
-
-    //Runs the command if it exists and the user is allowed to
-    if (commandFile && commandFile.help.level <= maxLevel.maxLevel(message)) {
-        commandFile.run(client, message, args);
-    } 
+    commands.runCommand(client, message);
     
 });
 

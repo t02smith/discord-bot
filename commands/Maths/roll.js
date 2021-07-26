@@ -13,7 +13,7 @@ module.exports.run = async(client, message, args) => {
 
 module.exports.help = {
     "name": "roll",
-    "description": "Pass through an upperbound greater than 1 and it will randomly select a value",
+    "description": "Randomly generate a number",
     "use": "roll <upperBound>",
     "level": 1
 }

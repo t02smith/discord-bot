@@ -8,10 +8,10 @@ your server.
 ## Commands
 
 All commands start with a prefix that can be changed inside config.json but by default
-it is "!". \
+it's "!". \
 By running "!help" the user is sent this message:
 
-```
+```txt
 User Permission Level 5
 
 **Commands**         **Use**                                **Description**
@@ -36,9 +36,11 @@ yesno                !yesno <time(s)> <Question>             Creates a yes or no
 ### User levels
 
 If you look at the help command you will notice the following
-```
+
+```txt
 User Permission Level 5
 ```
+
 This bot uses a levelling system to determine which users can use what commands based
 upon what roles they have been given. However the bot will only recognise certain roles
 that are stored inside the roles.json file and can be added to your server using the 
@@ -62,6 +64,7 @@ To create your own discord bot, I would recommend the following tutorial: \
 [How-to Geek](https://www.howtogeek.com/364225/how-to-make-your-own-discord-bot/)
 
 After creating your bot and adding it to your server:
+
 - Clone the repository using "git clone https://github.com/t02smith/discord-bot.git"
 - Add your bot token to the .env file
 - Run "npm start" to start the bot
