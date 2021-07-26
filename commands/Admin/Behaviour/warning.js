@@ -31,5 +31,6 @@ module.exports.help = {
     "name": "warning",
     "description": "Gives a warning role to a user. Two warnings results in a ban.",
     "use": "warning <userTag> <mute(true/false)>",
+    "category": "ADMIN",
     "level": 4
 }

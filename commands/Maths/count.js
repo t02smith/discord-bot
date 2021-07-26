@@ -25,6 +25,7 @@ module.exports.help = {
     "name": "count",
     "description": "Counts the number of time a string appears in a word/phrase",
     "use": "count <letter/string> | <word/phrase>",
+    "category": "MATHS",
     "level": 1
 
 }

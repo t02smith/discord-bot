@@ -15,5 +15,6 @@ module.exports.help = {
     "name": "suggest",
     "description": "Sends a suggestion to the admins",
     "use": "suggest <suggestion>",
+    "category": "USER",
     "level": 1
 }

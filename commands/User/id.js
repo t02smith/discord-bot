@@ -8,5 +8,6 @@ module.exports.help = {
     "name": "id",
     "description": "Returns a user's id",
     "use": "id",
+    "category": "USER",
     "level": 1
 }

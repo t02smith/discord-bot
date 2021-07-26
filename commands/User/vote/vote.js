@@ -70,5 +70,6 @@ module.exports.help = {
     "name": "vote",
     "description": "Lets users vote between some given options.",
     "use": 'vote <time(s)> <Question> <Options>',
+    "category": "USER",
     "level": 1
 }

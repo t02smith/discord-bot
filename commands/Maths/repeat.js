@@ -13,5 +13,6 @@ module.exports.help = {
     "name": "repeat",
     "description": "repeats a word a given number of times",
     "use": "repeat <n> <word>",
+    "category": "MATHS",
     "level": 1
 }

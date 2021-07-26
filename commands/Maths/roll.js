@@ -15,5 +15,6 @@ module.exports.help = {
     "name": "roll",
     "description": "Randomly generate a number",
     "use": "roll <upperBound>",
+    "category": "MATHS",
     "level": 1
 }

@@ -54,5 +54,6 @@ module.exports.help = {
     "name": "yesno",
     "description": "Creates a yes or no poll",
     "use": "yesno <time(s)> <Question>",
+    "category": "USER",
     "level": 1
 }

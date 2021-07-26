@@ -26,6 +26,7 @@ module.exports.help = {
     "name": "mute",
     "description" : "Mutes a user until they are unmuted or after an alloted time.",
     "use": "mute <userTag> <time>",
+    "category": "ADMIN",
     "level": 4
 }
 

@@ -26,5 +26,6 @@ module.exports.help = {
     "name": "updateRoles",
     "description": "Updates the roles that can be assigned by the bot",
     "use": "updateRoles",
+    "category": "ADMIN",
     "level": 5
 }

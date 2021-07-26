@@ -18,5 +18,6 @@ module.exports.help = {
     "name": "nuke",
     "description": "Deletes all messages in a channel",
     "use": "nuke",
+    "category": "ADMIN",
     "level": 1
 }

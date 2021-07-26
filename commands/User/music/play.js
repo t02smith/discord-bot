@@ -27,5 +27,6 @@ module.exports.help = {
     "name": "play",
     "description": "Plays a youtube video's audio",
     "use": "play <youtubeLink>",
+    "category": "MUSIC",
     "level": 1
 }

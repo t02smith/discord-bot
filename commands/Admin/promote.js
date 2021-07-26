@@ -13,5 +13,6 @@ module.exports.help = {
     "name": "promote",
     "description": "Promotes a user to the manager role",
     "use": "promote <userTag>",
+    "category": "ADMIN",
     "level": 5
 }

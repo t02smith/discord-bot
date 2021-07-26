@@ -2,6 +2,11 @@ const Discord = require("discord.js");
 const axios = require("axios");
 
 module.exports.run = async(client, message, args) => {
+    if (args.length === 0) {
+        message.reply("No pokemon specified.");
+        return;
+    }
+
     const link = `https://pokeapi.co/api/v2/pokemon/${args[0]}`;
 
     axios.get(link).then(res => {
@@ -45,5 +50,6 @@ module.exports.help = {
     "name": "pokemon",
     "description": "Get a pokedex entry",
     "use": "pokemon <name>",
+    "category": "GAME",
     "level": 1
 }

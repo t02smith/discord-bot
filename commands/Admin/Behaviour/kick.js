@@ -10,5 +10,6 @@ module.exports.help = {
     "name": "kick",
     "description": "Kicks a user from the server.",
     "use": "kick <userTag>",
+    "category": "ADMIN",
     "Level": 4
 }

@@ -16,5 +16,6 @@ module.exports.help = {
     "name": "unmute",
     "description": "Unmutes a muted user",
     "use": "unmute <userTag>",
+    "category": "ADMIN",
     "level": 4
 }
